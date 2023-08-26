@@ -47,7 +47,25 @@ namespace TechJobsConsoleAutograded6
             // load data, if not already loaded
             LoadData();
 
-            return null;
+            List<Dictionary<string, string>> results = new List<Dictionary<string, string>>();
+
+            foreach (var job in AllJobs)
+            {
+                foreach (var column in job)
+                {
+                    if (column.Value.ToLower().Contains(value.ToLower()))
+                    {
+                        // Check if the job is already in the results list to avoid duplicates
+                        if (!results.Contains(job))
+                        {
+                            results.Add(job);
+                        }
+                        break; // No need to check other columns of the same job
+                    }
+                }
+            }
+
+            return results;
         }
 
         /**
@@ -70,7 +88,7 @@ namespace TechJobsConsoleAutograded6
 
 
                 //TODO: Make search case-insensitive
-                if (aValue.Contains(value))
+                if (aValue.ToLower().Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }
