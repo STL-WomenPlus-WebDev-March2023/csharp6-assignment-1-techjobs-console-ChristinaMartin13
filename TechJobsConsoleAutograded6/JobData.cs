@@ -53,7 +53,7 @@ namespace TechJobsConsoleAutograded6
             {
                 foreach (var column in job)
                 {
-                    if (column.Value.Equals(value, StringComparison.OrdinalIgnoreCase))
+                    if (column.Value.Contains(value, StringComparison.OrdinalIgnoreCase))
                     {
                         // Check if the job is already in the results list to avoid duplicates
                         if (!results.Contains(job))

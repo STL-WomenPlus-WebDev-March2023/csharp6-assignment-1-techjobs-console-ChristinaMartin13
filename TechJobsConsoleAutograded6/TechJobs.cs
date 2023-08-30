@@ -144,8 +144,9 @@ namespace TechJobsConsoleAutograded6
                 Console.WriteLine("No results");
                 return;
             }
-            foreach (var job in someJobs)
-            {
+                Console.WriteLine();
+            for (int i = 0; i < someJobs.Count; i++)
+            {   var job = someJobs[i];
                 Console.WriteLine("*****");
 
                 foreach (var pair in job)
@@ -154,10 +155,15 @@ namespace TechJobsConsoleAutograded6
                   
                 }
 
-                Console.WriteLine("*****" + Environment.NewLine);
+                Console.WriteLine("*****");
+                if (i < someJobs.Count - 1)
+                {
+                Console.WriteLine();
+
+                }
             }
 
-    
+           
         }
 
 
