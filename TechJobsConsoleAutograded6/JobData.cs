@@ -87,7 +87,7 @@ namespace TechJobsConsoleAutograded6
                 string aValue = row[column];
 
                 // Make search case-insensitive
-                if (aValue.Equals(value, StringComparison.OrdinalIgnoreCase))
+                if (aValue.Contains(value, StringComparison.OrdinalIgnoreCase))
                 {
                     jobs.Add(row);
                 }
